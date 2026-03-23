@@ -48,17 +48,20 @@ const Island = ({isRotating, setIsRotating, setCurrentStage, ...props}) => {
     e.preventDefault();
 
     if (isRotating) {
-      const clientX = e.touches 
-    ? e.touches[0].clientX 
-    : e.clientX
+    // If it's a touch event, prevent scrolling
+    if (e.touches) e.preventDefault(); 
+    e.stopPropagation();
 
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
     const delta = (clientX - lastX.current) / viewport.width;
 
-    islandRef.current.rotation.y += delta * 0.01 * Math.PI;
+    // Adjust the multiplier (0.005 instead of 0.01) for more control on small screens
+    const rotationAmount = delta * 0.01 * Math.PI;
+    islandRef.current.rotation.y += rotationAmount;
 
-    lastX.current = clientX
-    rotationSpeed.current = delta * 0.01 * Math.PI;
-    }
+    lastX.current = clientX;
+    rotationSpeed.current = rotationAmount;
+  }
   }
 
   const handleKeyDown = (e) => {
@@ -132,22 +135,34 @@ const Island = ({isRotating, setIsRotating, setCurrentStage, ...props}) => {
   });
     
   useEffect(() => {
-    const canvas = gl.domElement
-    canvas.addEventListener('pointerdown', handlePointerDown)
-    canvas.addEventListener('pointerup', handlePointerUp);
-    canvas.addEventListener('pointermove', handlePointerMove);
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('keyup', handleKeyUp);
+   const canvas = gl.domElement;
 
-    return () => {
-      canvas.removeEventListener('pointerdown', handlePointerDown);
-      canvas.removeEventListener('pointerup', handlePointerUp);
-      canvas.removeEventListener('pointermove', handlePointerMove);
-      document.removeEventListener('keydown', handleKeyDown)
-      document.removeEventListener('keyup', handleKeyUp)
-    }
+  // Add both Pointer and Touch listeners
+  canvas.addEventListener('pointerdown', handlePointerDown);
+  canvas.addEventListener('pointerup', handlePointerUp);
+  canvas.addEventListener('pointermove', handlePointerMove);
+  
+  // Touch specific listeners
+  canvas.addEventListener('touchstart', handlePointerDown);
+  canvas.addEventListener('touchmove', handlePointerMove, { passive: false });  canvas.addEventListener('touchend', handlePointerUp);
+
+  document.addEventListener('keydown', handleKeyDown);
+  document.addEventListener('keyup', handleKeyUp);
+
+  return () => {
+    canvas.removeEventListener('pointerdown', handlePointerDown);
+    canvas.removeEventListener('pointerup', handlePointerUp);
+    canvas.removeEventListener('pointermove', handlePointerMove);
+    
+    canvas.removeEventListener('touchstart', handlePointerDown);
+    canvas.removeEventListener('touchmove', handlePointerMove);
+    canvas.removeEventListener('touchend', handlePointerUp);
+
+    document.removeEventListener('keydown', handleKeyDown);
+    document.removeEventListener('keyup', handleKeyUp);
+  };
    
-  }, [gl, handlePointerDown, handlePointerUp, handlePointerMove])
+ }, [gl, handlePointerDown, handlePointerUp, handlePointerMove, handleKeyDown, handleKeyUp]);
 
 
   return (

@@ -192,3 +192,7 @@ body:has(.card[data-color="green"]:hover) {
               0.65vmin 1vmin #36492d, 
               1vmin 0.65vmin #36492d;
 }
+
+canvas {
+  touch-action: none;
+}
