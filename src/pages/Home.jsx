@@ -98,7 +98,7 @@ const Home = () => {
 
     </Canvas>
 
-    <div className="absolute bottom-2 left-2">
+    <div className="absolute bottom-5 left-5 music-btn-container">
       <img
         src={!IsPlayingMusic ? soundoff : soundon}
         alt="sound"

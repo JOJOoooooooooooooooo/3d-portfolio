@@ -196,3 +196,9 @@ body:has(.card[data-color="green"]:hover) {
 canvas {
   touch-action: none;
 }
+
+.music-btn-container {
+  /* This ensures the button is always above the browser's bottom bar */
+  bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
+  left: calc(env(safe-area-inset-left) + 0.5rem);
+}
