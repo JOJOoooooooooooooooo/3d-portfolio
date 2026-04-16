@@ -173,6 +173,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
+     {
+        iconUrl: videoGame,
+        theme: 'btn-back-blue',
+        name: 'Sonic Fan Game - Unity Project',
+        description: 'This project is a technical deep dive into the unique challenges of high-speed 3D platforming, driven by a passion for the classic Sonic franchise. I engineered a custom physics-based character controller to capture the iconic "feel of speed," balancing rapid acceleration with responsive traversal, combat, and ring-collection systems. A major highlight is the final encounter with Dr. Eggman, where I scripted the entire cinematic sequence and developed complex AI behaviors for his movement and attack patterns. To elevate the scale of this showdown, I implemented custom logic to transform the stage into a seamless endless runner, ensuring the environment loops indefinitely until the boss is defeated. Additionally, I built a robust asynchronous loading system to manage precise level transitions and maintain high performance throughout the experience. overall this is my proudest work yet!',
+        link: 'https://github.com/JOJOoooooooooooooooo/Sonic-Project/tree/main',
+        videoId: 'LZ2xb5vBfDY'
+    },
     {
         iconUrl: gears,
         theme: 'btn-back-red',
