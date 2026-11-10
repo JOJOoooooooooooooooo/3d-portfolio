@@ -1,30 +1,30 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+// import { meta, shopify, starbucks, tesla } from "../assets/images";
 
 
 import {
-    car,
+    // car,
     contact,
     css,
-    estate,
-    express,
+    // estate,
+    // express,
     git,
     github,
     html,
     javascript,
     linkedin,
-    mongodb,
-    motion,
-    mui,
+    // mongodb,
+    // motion,
+    // mui,
     nextjs,
     nodejs,
-    pricewise,
+    // pricewise,
     react,
     redux,
-    sass,
-    snapgram,
-    summiz,
+    // sass,
+    // snapgram,
+    // summiz,
     tailwindcss,
-    threads,
+    // threads,
     typescript,
     c_sharp,
     cpp,
@@ -37,6 +37,8 @@ import {
     gears,
     ai,
     videoGame,
+    HowlingWolfGames,
+    AmazonWebServices,
 
 
 } from "../assets/icons";
@@ -132,22 +134,43 @@ export const skills = [
         imageUrl: typescript,
         name: "TypeScript",
         type: "Frontend",
-    }
+    },
+     {
+        imageUrl: AmazonWebServices,
+        name: "Amazon Web Services",
+        type: "Backend/Cloud",
+    },
 ];
 
 export const experiences = [
     {
-        title: "A.I Prompt Engineer Intern / Software Dev",
+        title: "Software Dev & A.I Prompt Engineer Intern",
         company_name: "GenieAINow",
         icon: genieAINow,
         iconBg: "#accbe1",
-        date: " April 2025- Present",
+        date: " June 2024- June 2026",
         points: [
             "Developing and maintaining web applications using React.js and other related technologies.",
             "Optimized the prompting and engineering of voice A.I (NLP) to solve problems and innovate in uncharted territory.",
             "Collaborated with back-end logistics team to enhance process efficiency, collaborated with front-end UI/UX team to enhance user experience and spoke to clients directly.",
             "Personally managed client relations and helped launch our systems onto client computers.",
             "Managed the Onboarding process for these clients.",
+
+        ],
+    },
+    {
+        title: "Game Designer & Narrative Producer",
+        company_name: "Howling Wolf Games",
+        icon: HowlingWolfGames,
+        iconBg: "#111111",
+        date: " May 2026- Present",
+        points: [
+            "Created System Designs and Level Designs for game projects.",
+            "Created Wireframes and Game Design Documents for specific Game concepts and functionalities.",
+            "Worked on lore of the game as well as polish and cutscene coherence.",
+            "Collaborated with Art team to create UI/UX for the game as well as main menu concepts and accessibility.",
+            "Worked in engine to create features and customize levels.",
+            "Spearheaded and managed development teams, directing cross-functional efforts to deliver key project milestones on schedule.",
 
         ],
     },

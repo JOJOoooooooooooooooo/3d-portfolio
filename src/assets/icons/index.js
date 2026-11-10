@@ -38,6 +38,8 @@ import genieAINow from './GenieAINow.svg'
 import gears from './gears.svg'
 import ai from './ai.svg'
 import videoGame from './videoGame.svg'
+import HowlingWolfGames from './HwgIcon.svg'
+import AmazonWebServices from './AwsIcon.svg'
 
 export {
     css,
@@ -79,4 +81,6 @@ export {
     gears,
     ai,
     videoGame,
+    HowlingWolfGames,
+    AmazonWebServices,
 }
